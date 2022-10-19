@@ -11,7 +11,7 @@ DEFAULT_OUTPUT_PATH = os.path.join(os.path.expanduser('~'), f"Pictures/sketch-{d
 @click.command()
 @click.option("--image", prompt="Image", help="Name of the image to sketch.")
 @click.option("--output", default=DEFAULT_OUTPUT_PATH, help="Name of the output file.")
-def main(image, output):    
+def convert(image, output):
     try:
         img = cv.imread(image)
         gray_image = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
@@ -38,5 +38,6 @@ def main(image, output):
             click.secho(f"File written to {output}", fg="green")  
     
     click.secho("THANK YOU!", fg="green")
-         
-main()
+
+if __name__ == "__main__":
+    convert()
