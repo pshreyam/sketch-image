@@ -1,11 +1,19 @@
-import cv2 as cv
-import click
+"""
+Sketch Image
+
+Convert images into sketches
+"""
 
 import os
 from datetime import datetime
 
+import cv2 as cv
+import click
 
-DEFAULT_OUTPUT_PATH = os.path.join(os.path.expanduser('~'), f"Pictures/sketch-{datetime.now().timestamp()}.jpg")
+
+DEFAULT_OUTPUT_PATH = os.path.join(
+    os.path.expanduser("~"), f"Pictures/sketch-{datetime.now().timestamp()}.jpg"
+)
 
 
 @click.command()
@@ -27,17 +35,14 @@ def convert(image, output):
 
         # create the pencil sketch image
         pencil_sketch = cv.divide(gray_image, inverted_blurred_img, scale=256.0)
-    except:
+    except Exception:
         click.secho("[Error] : Image could not be read or processed!", fg="red")
     else:
         try:
             cv.imwrite(output, pencil_sketch)
-        except:
-            click.secho("[Error] : File could not be written!", fg="red") 
+        except Exception:
+            click.secho("[Error]: File could not be written!", fg="red")
         else:
-            click.secho(f"File written to {output}", fg="green")  
-    
-    click.secho("THANK YOU!", fg="green")
+            click.secho(f"File written to {output}", fg="green")
 
-if __name__ == "__main__":
-    convert()
+    click.secho("THANK YOU!", fg="green")

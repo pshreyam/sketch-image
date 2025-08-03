@@ -1,5 +1,8 @@
 # Sketch Image
 
+> [!WARNING]
+> This package is just a playground to learn packages and fun experiments.
+
 Convert Images to Sketches
 
 # Installation

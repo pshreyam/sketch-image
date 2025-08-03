@@ -1,3 +1,21 @@
+[project]
+name = "sketch-image"
+version = "0.1.0"
+description = "Convert images into sketches"
+readme = "README.md"
+authors = [
+    { name = "Shreyam Pokharel", email = "pshreyam@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.2.1",
+    "numpy>=2.3.2",
+    "opencv-python>=4.11.0.86",
+]
+
+[project.scripts]
+sketch-image = "sketch_image.main:convert"
+
 [build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
