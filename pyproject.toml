@@ -14,7 +14,7 @@ dependencies = [
 ]
 
 [project.scripts]
-sketch-image = "sketch_image.main:convert"
+sketch-image = "sketch_image:convert"
 
 [build-system]
 requires = ["hatchling"]
