@@ -1,11 +1,8 @@
 name: Build
 
 on:
-  push:
-    branches:
-      - develop
-    tags:
-      - "v*"
+  release:
+    types: ["published"]
 
 jobs:
   build:
