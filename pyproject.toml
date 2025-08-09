@@ -1,6 +1,6 @@
 [project]
 name = "sketch-image"
-version = "0.1.1"
+version = "0.1.2"
 description = "Convert images into sketches"
 readme = "README.md"
 authors = [
@@ -19,3 +19,14 @@ sketch-image = "sketch_image:convert"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+addopts = "-ra --cov=sketch_image --cov-report=term-missing --cov-report=xml:coverage.xml --cov-report=html"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8.2.0",
+  "pytest-cov>=5.0.0",
+]

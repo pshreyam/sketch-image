@@ -27,3 +27,11 @@ For help, run:
 ```bash
 sketch-image --help
 ```
+
+## Development
+
+- Run tests with coverage:
+
+```bash
+pytest
+```
